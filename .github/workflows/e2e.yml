@@ -1,4 +1,4 @@
-name: ci
+name: e2e
 
 on:
   push:
@@ -43,5 +43,8 @@ jobs:
       - name: Run linter 👀
         run: npm run lint
 
-      - name: Run tests 🧪
-        run: npm run test
+      - name: Run E2E tests 🧪
+        uses: cypress-io/github-action@v4
+        with:
+          build: npm run build
+          start: npm start
