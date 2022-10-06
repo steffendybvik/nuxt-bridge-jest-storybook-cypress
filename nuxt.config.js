@@ -29,6 +29,10 @@ export default defineNuxtConfig({
 
   axios: {},
 
+  storybook: {
+    decorators: ['<v-app><story/></v-app>'],
+  },
+
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
