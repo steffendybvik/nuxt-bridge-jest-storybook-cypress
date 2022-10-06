@@ -10,6 +10,7 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "test": "jest",
+    "storybook": "npx nuxt storybook",
     "cypress": "npx cypress open"
   },
   "dependencies": {
@@ -24,6 +25,7 @@
     "@nuxt/types": "^2.15.7",
     "@nuxtjs/eslint-config-typescript": "^6.0.1",
     "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/storybook": "^4.3.2",
     "@nuxtjs/vuetify": "^1.12.1",
     "@vue/test-utils": "^1.2.1",
     "babel-core": "7.0.0-bridge.0",
@@ -36,6 +38,7 @@
     "jest": "^27.0.5",
     "prettier": "^2.3.2",
     "ts-jest": "^27.0.3",
+    "ts-node": "^10.9.1",
     "ufo": "^0.8.5",
     "vue-jest": "^3.0.4"
   }
