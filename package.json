@@ -1,5 +1,5 @@
 {
-  "name": "nuxt2_bridged",
+  "name": "nuxt-bridge-jest-storybook-cypress",
   "version": "1.0.0",
   "private": true,
   "scripts": {
