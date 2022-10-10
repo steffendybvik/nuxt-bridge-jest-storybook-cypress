@@ -1,6 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
-
 import { defineNuxtConfig } from '@nuxt/bridge'
+
 export default defineNuxtConfig({
   head: {
     titleTemplate: '%s - nuxt2_bridged',
@@ -25,7 +25,7 @@ export default defineNuxtConfig({
 
   buildModules: ['@nuxtjs/vuetify'],
 
-  modules: ['@nuxtjs/axios'],
+  modules: ['@nuxtjs/axios', ['~/modules/bauta', { enabled: false }]],
 
   axios: {},
 
