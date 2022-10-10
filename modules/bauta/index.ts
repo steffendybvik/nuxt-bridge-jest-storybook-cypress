@@ -1,5 +1,4 @@
 import { join, resolve } from 'path'
-import { fileURLToPath } from 'url'
 import { defineNuxtModule, addPlugin } from '@nuxt/kit'
 
 export default defineNuxtModule({
@@ -21,23 +20,14 @@ export default defineNuxtModule({
         path: join(__dirname, 'components'),
       })
     },
-
-    // 'pages:extend'(pages) {
-    //   pages.push({
-    //     name: 'folder-file',
-    //     path: '/folder/file',
-    //     file: resolve(__dirname, 'file.vue'),
-    //   })
-    // },
   },
 
-  setup(options, nuxt) {
-    if (options.enabled) {
-      const runtimeDir = fileURLToPath(
-        new URL('./runtime', import.meta.url).toString()
-      )
-      nuxt.options.build.transpile.push(runtimeDir)
-      addPlugin(resolve(runtimeDir, 'plugin'))
+  setup(options) {
+    if (!options.enabled) return
+
+    const pluginsToSync = ['plugins/index', 'store/index']
+    for (const pathString of pluginsToSync) {
+      addPlugin(resolve(__dirname, pathString))
     }
   },
 })

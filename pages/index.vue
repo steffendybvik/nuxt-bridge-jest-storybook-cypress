@@ -12,10 +12,20 @@ const nuxtApp = useNuxtApp()
         <VuetifyLogo />
       </v-card>
       <v-card>
-        <TestComponent v-if="nuxtApp.$hello" />
         <v-card-title class="headline">
           Welcome to the Vuetify + Nuxt.js template
         </v-card-title>
+
+        <v-divider />
+
+        <v-card-text>
+          <pre>{{ $store.state.auth }}</pre>
+          <pre>{{ $store.state.bauta }}</pre>
+          <pre>{{ nuxtApp.$bauta('Test') }}</pre>
+        </v-card-text>
+
+        <v-divider />
+
         <v-card-text>
           <p>
             Vuetify is a progressive Material Design component framework for

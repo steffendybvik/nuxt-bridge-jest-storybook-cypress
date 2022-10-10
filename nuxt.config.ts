@@ -1,3 +1,4 @@
+// @ts-ignore
 import colors from 'vuetify/es5/util/colors'
 import { defineNuxtConfig } from '@nuxt/bridge'
 
@@ -30,7 +31,8 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxtjs/axios',
-    '@pinia/nuxt',
+    ['@pinia/nuxt', { disableVuex: false }],
+    ['~/modules/auth', { enabled: true }],
     ['~/modules/bauta', { enabled: true }],
   ],
 
