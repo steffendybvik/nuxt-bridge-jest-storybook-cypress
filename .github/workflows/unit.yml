@@ -32,5 +32,8 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm ci --prefer-offline --no-audit
 
+      - name: Nuxi prepare
+        run: npm run prepare
+
       - name: Run tests 🧪
         run: npm run test

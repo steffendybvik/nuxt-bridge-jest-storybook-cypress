@@ -10,7 +10,7 @@
     "dev": "nuxi dev",
     "build": "nuxi build",
     "start": "nuxi preview",
-    "generate": "nuxt generate",
+    "prepare": "nuxi prepare",
     "lint:fix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:fix",
     "test": "jest",

@@ -40,6 +40,9 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm ci --prefer-offline --no-audit
 
+      - name: Nuxi prepare
+        run: npm run prepare
+
       - name: Run E2E tests 🧪
         uses: cypress-io/github-action@v4
         with:
