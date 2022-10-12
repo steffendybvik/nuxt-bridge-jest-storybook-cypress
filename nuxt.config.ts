@@ -1,7 +1,11 @@
+// @ts-ignore
 import colors from 'vuetify/es5/util/colors'
-
 import { defineNuxtConfig } from '@nuxt/bridge'
+
 export default defineNuxtConfig({
+  alias: {
+    tslib: 'tslib/tslib.es6.js',
+  },
   head: {
     titleTemplate: '%s - nuxt2_bridged',
     title: 'nuxt2_bridged',
@@ -25,7 +29,12 @@ export default defineNuxtConfig({
 
   buildModules: ['@nuxtjs/vuetify'],
 
-  modules: ['@nuxtjs/axios'],
+  modules: [
+    '@nuxtjs/axios',
+    ['@pinia/nuxt', { disableVuex: false }],
+    ['~/modules/auth', { enabled: true }],
+    ['~/modules/bauta', { enabled: true }],
+  ],
 
   axios: {},
 

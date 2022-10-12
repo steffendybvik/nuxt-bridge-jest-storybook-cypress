@@ -1,19 +1,25 @@
 {
-  "name": "nuxt2_bridged",
+  "name": "nuxt-bridge-jest-storybook-cypress",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "^16.16.0",
+    "npm": "^8.11.0"
+  },
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
     "start": "nuxi preview",
-    "generate": "nuxt generate",
-    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "npm run lint:js",
+    "prepare": "nuxi prepare",
+    "lint:fix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
+    "lint": "npm run lint:fix",
     "test": "jest",
-    "storybook": "npx nuxt storybook"
+    "storybook": "npx nuxt storybook",
+    "cypress": "npx cypress open"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@pinia/nuxt": "^0.4.3",
     "core-js": "^3.15.1",
     "nuxt-edge": "latest",
     "vuetify": "^2.5.5"
@@ -26,9 +32,11 @@
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/storybook": "^4.3.2",
     "@nuxtjs/vuetify": "^1.12.1",
-    "@vue/test-utils": "^1.2.1",
+    "@types/jest": "^27.5.2",
+    "@vue/test-utils": "^1.3.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^27.0.5",
+    "cypress": "^10.9.0",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^2.0.0",
@@ -37,6 +45,7 @@
     "prettier": "^2.3.2",
     "ts-jest": "^27.0.3",
     "ts-node": "^10.9.1",
+    "typescript": "^4.4.2",
     "ufo": "^0.8.5",
     "vue-jest": "^3.0.4"
   }
